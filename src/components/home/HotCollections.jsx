@@ -63,7 +63,7 @@ const options = {
     <div className="nft_coll">
 
       <div className="nft_wrap">
-        <Link to={`/item-details/${collection.id}`}>
+       <Link to={`/item-details/collection/${collection.id}`}>
           <img
             src={collection.nftImage}
             className="lazy img-fluid"
@@ -84,7 +84,7 @@ const options = {
       </div>
 
       <div className="nft_coll_info">
-        <Link to={`/item-details/${collection.id}`}>
+      <Link to={`/item-details/collection/${collection.id}`}>
           <h4>{collection.title}</h4>
         </Link>
 

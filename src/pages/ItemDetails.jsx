@@ -5,26 +5,30 @@ import EthImage from "../images/ethereum.svg";
 import Skeleton from "../components/UI/Skeleton";
 
 const ItemDetails = () => {
-  const { id } = useParams();
+ const { type, id } = useParams();
   const [collection, setCollection] = useState(null);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
 
-    axios
-      .get(
-        "https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections",
-      )
-  .then((response) => {
-  const selectedCollection = response.data.find(
-    (item) => item.id === Number(id)
-  );
+  const apiUrl =
+    type === "new"
+      ? "https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems"
+      : "https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections";
 
-  setCollection(selectedCollection);
-})
-      .catch((error) => {
-        console.error("Error fetching collection:", error);
-      });
-  }, [id]);
+  axios
+    .get(apiUrl)
+    .then((response) => {
+      const selectedCollection = response.data.find(
+        (item) => item.id === Number(id)
+      );
+
+      setCollection(selectedCollection);
+    })
+    .catch((error) => {
+      console.error("Error fetching item:", error);
+    });
+}, [type, id]);
 
   if (!collection) {
   return (
