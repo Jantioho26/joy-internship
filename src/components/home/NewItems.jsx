@@ -34,14 +34,10 @@ const NewItems = () => {
     .get(
       "https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems"
     )
-    .then((response) => {
-
-
-      setTimeout(() => {
-        setItems(response.data);
-        setLoading(false);
-      }, 3000);
-    })
+.then((response) => {
+  setItems(response.data);
+  setLoading(false);
+})
     .catch((error) => {
       console.error("Error fetching new items:", error);
       setLoading(false);
