@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Skeleton from "../UI/Skeleton";
+import AOS from "aos";
 
 const TopSellers = () => {
   const [sellers, setSellers] = useState([]);
@@ -13,9 +14,13 @@ const TopSellers = () => {
         "https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers",
       )
       .then((response) => {
-        setSellers(response.data);
-        setLoading(false);
-      })
+  setSellers(response.data);
+  setLoading(false);
+
+  setTimeout(() => {
+    AOS.refresh();
+  }, 100);
+})
       .catch((error) => {
         console.error("Error fetching top sellers:", error);
         setLoading(false);
@@ -23,7 +28,7 @@ const TopSellers = () => {
   }, []);
 
   return (
-    <section id="section-popular" className="pb-5">
+       <section id="section-popular" className="pb-5" data-aos="fade-up">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
