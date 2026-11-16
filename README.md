@@ -1,16 +1,16 @@
 # Ultraverse — NFT Marketplace
 
-Ultraverse is a responsive NFT marketplace web application featuring a modern, visually engaging interface inspired by digital collectibles and NFT trading platforms.
+Ultraverse is a responsive NFT marketplace web application featuring a modern, visually engaging interface inspired by digital collectibles and NFT trading platforms.  Collaborated with other students to create a dynamic webpage. 
 
 Live Demo: https://joy-nft-marketplace.vercel.app/
 
 ## Technologies Used
 
-- React — version to confirm
+- React — 17.0.2
 - JavaScript (ES6+)
 - HTML5
 - CSS3
-- Vercel — deployment
+- Vercel 
 
 ## Features
 
@@ -24,18 +24,16 @@ Live Demo: https://joy-nft-marketplace.vercel.app/
 
 ### How to Run Locally
 
-Clone the GitHub repository and navigate to the project folder.
+- git clone https://github.com/Jantioho26/joy-internship.git
 
-Install dependencies:
+- npm install
 
-npm install
+- npm run dev
 
-Start the development server:
+- Open the local URL displayed in your terminal (localhost:3000)
 
-npm run dev
+- Deployed using Vercel.
 
-Open the local URL displayed in your terminal.
 
-Deployment
+  <img width="1386" height="636" alt="Screenshot 2026-11-16 at 7 30 52 AM" src="https://github.com/user-attachments/assets/021863ee-b640-4429-872a-3fdc474ea6a6" />
 
-Deployed using Vercel.
